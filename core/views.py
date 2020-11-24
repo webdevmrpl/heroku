@@ -88,7 +88,7 @@ def user_activate(request, sign):
 
 # //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-# @cache_page(86400, cache='default')
+@cache_page(21600, cache='default')
 def main_page(request):
     customers = Customer.objects.all()
     customer_count = len(Customer.objects.all())
@@ -104,7 +104,7 @@ def main_page(request):
                    'monthly_active_users': monthly_active_customers_pie()})
 
 
-# @cache_page(86400, cache='default')
+@cache_page(43200, cache='default')
 def graphs(request):
     return render(request, 'core/main_html/graphs.html', {'monthly_revenue': monthly_revenue_scatter(),
                                                           'monthly_growth': monthly_growth_scatter(),
@@ -171,4 +171,3 @@ def predict_sales_view(request):
         k.save()
     done = TotalPurchases.objects.all()
     return render(request, 'core/main_html/purchases.html', {'purchases':done})
-
