@@ -1,0 +1,34 @@
+{% extends "core/layout/base.html" %}
+{% load widget_tweaks %}
+{% block additional_css %}<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">{% endblock %}
+{% block title %}Вхід{% endblock %}
+
+{% block content %}
+    <div class="container text-center">
+    <h2>Вхід</h2>
+    {% if user.is_authenticated %}
+        <p>Ви вже увійшли!</p>
+        </div>
+    {% else %}
+    <div class="form-wrapper">
+        <form method="post">
+        {% csrf_token %}
+            <div id="first_field">
+                <div class="form-row justify-content-center mb-3">
+                <label for="username" class="mr-2 mt-2" >Ім'я користувача</label>
+                {% render_field form.username class="form-control mr-4 col-xl-2 col-lg-2 col-sm-3 col-6" id="username"%}
+                    </div>
+            </div>
+            <div class="form-row justify-content-center mb-3">
+                <label for="password" class="mr-2 mt-2">Пароль</label>
+                {% render_field form.password class='form-control col-xl-2 col-lg-2 col-sm-3 col-6' id="password" %}
+            </div>
+            <input type="hidden" name="next" value="{{ next }}">
+       <button class="btn btn-primary" type="submit">Увійти</button>
+        </form>
+    </div>
+<div class="dee text-center"><a class="de text-decoration-none" href="{% url 'core:password_reset' %}"> Забули пароль?</a></div>
+<div class="dee text-center"><span>Нема аккаунту?</span><a class="de text-decoration-none" href="{% url "core:register" %}"> Зареєструватися</a></div>
+</div>
+    {% endif %}
+{% endblock %}

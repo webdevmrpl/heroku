@@ -1,0 +1,18 @@
+{% extends 'core/layout/base.html' %}
+{% load widget_tweaks %}
+{% block title %}
+Добавление информации
+{% endblock %}
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+    {% render_field form.invoice_num placeholder='Номер заказа' %}<br><br>
+    {% render_field form.title placeholder='Описание заказа' %}<br><br>
+    {% render_field form.quantity placeholder='Количество' %}<br><br>
+    {% render_field form.unit_price placeholder='Цена за единицу' %}<br><br>
+    {% render_field form.invoice_date placeholder='Дата покупки' %}<br><br>
+    {% render_field form.customer_id placeholder='ID пользователя' %}<br><br>
+    <button type="submit">Сохранить</button>
+    </form>
+{% endblock %}

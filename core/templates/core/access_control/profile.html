@@ -1,0 +1,24 @@
+{% extends "core/layout/base.html" %}
+{% block title %}Профіль{% endblock %}
+
+{% block content %}
+    <style>
+    @media (max-width: 389px) {
+                #btn1 {margin-top:1ex;}
+    }
+    </style>
+<div class="container text-center">
+    <h2 class="text-center">Профіль користувача - {{ user.username }}</h2>
+    {% if user.first_name and user.last_name %}
+        <p class="text-center">Доброго дня, {{ user.first_name }} {{ user.last_name }}</p>
+    {% else %}
+        <p class="text-center">Доброго дня!</p>
+    {% endif %}
+    <button class="btn btn-primary mr-1"><a class="text-white text-decoration-none" href="{% url "core:profile_change" %}">Змінити данні</a></button>
+    <button class="btn btn-primary" id="btn1"><a class="text-white text-decoration-none" href="{% url "core:password_change" %}">Змінити пароль</a></button>
+    <br>
+    <button class="btn btn-primary mt-2"><a class="text-white text-decoration-none" href='{% url "core:logout" %}'>Вихід</a></button>
+</div>
+
+
+{% endblock %}

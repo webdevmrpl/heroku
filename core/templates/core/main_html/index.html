@@ -1,0 +1,110 @@
+{% extends 'core/layout/base.html' %}
+{% load static %}
+{% load plotly_dash %}
+{% block title %}
+    Головна сторінка
+{% endblock %}
+
+{% block content %}
+    <h1 class="h3 mb-0 text-gray-800 ml-4 mb-3">Головна сторінка</h1>
+    <div class="container-fluid">
+<div class="row">
+    <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Прибуток за місяць</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">${{ monthly_revenue_card }}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Прибуток за рік</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">${{ annual_revenue }}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">План по прибутку за місяць</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ progress }}%</div>
+                        </div>
+                        <div class="col">
+                          <div class="progress progress-sm mr-2">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: {{ progress }}%" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Кількість покупців</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ customer_count }}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="text-gray-300"><svg width="2.2em" height="2.2em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                        <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+                      </svg></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+</div>
+    <div class="row">
+        <div class="col-xl-7 ">
+            <div class="shadow h-100 rounded">
+            {{ monthly_revenue_graph | safe }}
+                </div>
+        </div>
+
+        <div class="col-xl-5" id="pie">
+             <div class="shadow h-100 rounded">
+            {{ monthly_active_users | safe }}
+        </div>
+        </div>
+    </div>
+    </div>
+    <style>
+            @media (max-width: 1199px) {
+                #pie{
+                    margin-top: 2ex;
+                }
+            }
+        </style>
+{% endblock %}

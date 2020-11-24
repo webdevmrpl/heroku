@@ -1,0 +1,9 @@
+{% extends "core/layout/base.html" %}
+{% block title %}Помилка активації{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Користувач вже активований, увійдіть</h2>
+    <p class="text-center"><a href="{% url 'main:login' %}">Увійти</a></p>
+</div>
+{% endblock %}

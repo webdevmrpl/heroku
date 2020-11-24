@@ -1,0 +1,7 @@
+{%autoescape off%}
+Дорогий користувач, ви зробили запит на скидання пароля:
+Ваш логін для входу: {{user.get_username}}
+Щоб скинути, пройдіть по цьому інтернет-адресою:
+{{Protocol}}: // {{domain}} {% url 'core: password_reset_confirm' uidb64 = uid token = token%}
+З повагою адміністрація сервісу!
+{% endautoescape %}

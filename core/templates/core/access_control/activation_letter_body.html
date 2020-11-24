@@ -1,0 +1,12 @@
+{%autoescape off%}
+Шановний користувач, {{user.username}}
+
+Ви зареєструвалися у веб-додатка - "Customer Analysis".
+Вам необхідно виконати активацію, щоб підтвердити свою особу.
+Для цього, пройдіть, будь ласка, за посиланням:
+{{host}}{% url 'core:register_activate' sign=sign %}
+
+До зустрічв!
+
+З повагою, адміністрація сайту "Customer Analysis".
+{% endautoescape %}

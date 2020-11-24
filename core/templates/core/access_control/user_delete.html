@@ -1,0 +1,14 @@
+{% extends "core/layout/base.html" %}
+{% block title %}Користувача видалено{% endblock %}
+
+{% block content %}
+<div class="container">
+<h2 class="text-center">Видалення користувача - {{ object.username }}</h2>
+<div class="text-center">
+    <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Видалити</button>
+    </form>
+</div>
+</div>
+{% endblock %}
