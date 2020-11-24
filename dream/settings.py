@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'dream.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'project2',
-        'USER': 'postgres',
-        'PASSWORD': 'uE_xm932',
-        'HOST': '127.0.0.1',
+        'NAME': 'ddqto2i0hm3398',
+        'USER': 'imlkfvjrkwaxtz',
+        'PASSWORD': '326a0a30c293c02351e1b54d2274a18154d823596c2e3f75a55a767f496afc9a',
+        'HOST': 'ec2-54-247-94-127.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
 
     }
