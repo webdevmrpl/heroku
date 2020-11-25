@@ -175,7 +175,7 @@ def make_predictions(df_data):
 def predict_sales(df_sales):
     import pandas as pd
     import numpy as np
-    from tensorflow.python.keras.models import load_model
+    from keras.models import load_model
     import warnings
     warnings.filterwarnings("ignore")
     import pickle
