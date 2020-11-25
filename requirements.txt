@@ -12,11 +12,6 @@ click==7.1.2
 constantly==15.1.0
 cryptography==3.1.1
 daphne==2.5.0
-dash==1.16.3
-dash-core-components==1.12.1
-dash-html-components==1.1.1
-dash-renderer==1.8.2
-dash-table==4.10.1
 Django==3.1.1
 django-plotly-dash==1.4.2
 django-redis==4.12.1
