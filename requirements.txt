@@ -35,7 +35,7 @@ joblib==0.17.0
 Keras==2.4.3
 MarkupSafe==1.1.1
 msgpack==1.0.0
-numpy==1.19.2
+numpy==1.19.0
 pandas==1.1.2
 Pillow==7.2.0
 plotly==4.11.0
@@ -57,8 +57,8 @@ sklearn==0.0
 sqlparse==0.3.1
 tensorboard==2.3.0
 tensorboard-plugin-wit==1.7.0
-tf-estimator-nightly==2.4.0.dev2020102301
-tf-nightly==2.5.0.dev20201107
+tensorflow==2.3.1
+tensorflow-estimator==2.3.0
 threadpoolctl==2.1.0
 txaio==20.4.1
 Werkzeug==1.0.1
