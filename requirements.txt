@@ -30,7 +30,6 @@ incremental==17.5.0
 itsdangerous==1.1.0
 Jinja2==2.11.2
 joblib==0.17.0
-Keras==2.4.3
 MarkupSafe==1.1.1
 msgpack==1.0.0
 numpy==1.19.0
@@ -55,7 +54,6 @@ sklearn==0.0
 sqlparse==0.3.1
 tensorboard==2.3.0
 tensorboard-plugin-wit==1.7.0
-tensorflow==2.2.1
 threadpoolctl==2.1.0
 txaio==20.4.1
 Werkzeug==1.0.1
