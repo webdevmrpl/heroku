@@ -20,8 +20,6 @@ django-widget-tweaks==1.4.8
 djangorestframework==3.12.1
 dpd-components==0.1.0
 easy-thumbnails==2.7
-Flask==1.1.2
-Flask-Compress==1.7.0
 future==0.18.2
 gunicorn==20.0.4
 h5py==3.1.0
