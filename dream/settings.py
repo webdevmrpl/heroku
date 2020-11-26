@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '3s7kkcb+$2x310nqy2^na-5$iuke0&jka66fq78n*e#x3&=m-*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['client-analysis.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -40,14 +40,11 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'rest_framework',
     'django_plotly_dash.apps.DjangoPlotlyDashConfig',
-    'channels',
-    'channels_redis'
 
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -82,10 +79,10 @@ WSGI_APPLICATION = 'dream.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ddqto2i0hm3398',
-        'USER': 'imlkfvjrkwaxtz',
-        'PASSWORD': '326a0a30c293c02351e1b54d2274a18154d823596c2e3f75a55a767f496afc9a',
-        'HOST': 'ec2-54-247-94-127.eu-west-1.compute.amazonaws.com',
+        'NAME': 'project2',
+        'USER': 'postgres',
+        'PASSWORD': 'uE_xm932',
+        'HOST': 'localhost',
         'PORT': '5432',
 
     }
