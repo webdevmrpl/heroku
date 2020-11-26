@@ -80,10 +80,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'project2',
-        'USER': 'postgres',
-        'PASSWORD': 'uE_xm932',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'USER': 'super',
+        'PASSWORD': 'artemy.08',
+        'HOST': 'adminzhopy-1953.postgres.pythonanywhere-services.com',
+        'PORT': '11953',
 
     }
 }
